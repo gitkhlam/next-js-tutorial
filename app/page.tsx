@@ -2,6 +2,9 @@ import { prisma } from './utils/db';
 import BlogPostCard from '@/components/general/BlogPostCard';
 import { Suspense } from 'react';
 
+// в actions вызывается перед return
+export const revalidate = 60; // Устанавливает время в 60 секунд для автоматической ре-валидации данных страницы с использованием ISR (Incremental Static Regeneration)
+
 async function getData() {
   
   await new Promise(resolve => setTimeout(resolve, 2000));
