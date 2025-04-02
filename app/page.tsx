@@ -7,7 +7,7 @@ export const revalidate = 60; // Устанавливает время в 60 с�
 
 async function getData() {
   
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  //await new Promise(resolve => setTimeout(resolve, 2000));
   const data = await prisma.blogPost.findMany({
     select: {
       title: true,
