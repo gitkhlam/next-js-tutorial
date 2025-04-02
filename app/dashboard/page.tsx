@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { prisma } from '../utils/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import BlogPostCard from '@/components/general/BlogPostCard';
-import { time } from 'console';
 
 async function  getData(userId: string) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -23,7 +22,7 @@ export default async function DashBoard() {
     const {getUser} = getKindeServerSession();
     const user = await getUser()
 
-    const data = await getData(user.id)
+    const data = await getData(user?.id)
 
     return (
 		<div>
